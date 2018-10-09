@@ -40,7 +40,7 @@ var globalizationPlugin = {
             onError
             );
         navigator.globalization.getFirstDayOfWeek(
-            function (dow) { FDoW = dow.value; }
+            function (dow) { FDoW = dow.value; },
             onError
             );
         //navigator.globalization.numberToString
