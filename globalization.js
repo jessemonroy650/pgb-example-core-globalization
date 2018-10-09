@@ -1,21 +1,26 @@
 var globalizationPlugin = {
     version : '1.0.0',
+    displayBlockId = '',
 
     init : function () {
         return JSON.stringify(navigator.globalization);
     },
     // Register your function that will call the dialogs
-    hook : function () {
+    hook : function (divBlockId) {
         document.getElementById('status0').innerHTML = "hook() called";
+
+        //
+        globalizationPlugin.displayBlockId = divBlockId;
+
         // You can listen to 'click', but 'touchend' by passes the inherent delay.
         // See: https://www.w3schools.com/jsref/dom_obj_event.asp
-        //document.getElementById('getCurrentPosition').addEventListener("click", geolocationPlugin.getCurrentPosition, false);
-        //document.getElementById('watchPosition').addEventListener("click", geolocationPlugin.watchPosition, false);
-        //document.getElementById('clearWatch').addEventListener("click", geolocationPlugin.clearWatch, false);
+        document.getElementById('getGlobalizationStuff').addEventListener("touchend", globalizationPlugin.getGlobalizationStuff, false);
     },
     //
-    getGlobalizationStuff : function (divBlockId) {
+    getGlobalizationStuff : function () {
         var language = '', locale = '', isDLST = '', FDoW = '';
+
+        document.getElementById('status0').innerHTML = "getGlobalizationStuff Called";
 
         navigator.globalization.getPreferredLanguage(
             function (lang) { language = lang.value; },
@@ -42,7 +47,7 @@ var globalizationPlugin = {
         //navigator.globalization.stringToNumber
         //navigator.globalization.getNumberPattern
         //navigator.globalization.getCurrencyPattern
-        document.getElementById(divBlockId).innerHTML = 
+        document.getElementById(globalizationPlugin.displayBlockId).innerHTML = 
             "<p class=r /><b>language: </b>" + language +
             "<p class=g /><b>locale: </b>" + locale +
             "<p class=b /><b>isDayLightSavingsTime: </b>" + isDLST +
