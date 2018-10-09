@@ -5,10 +5,16 @@ var globalizationPlugin = {
     init : function () {
         if (window.globalization && typeof window.globalization === 'object') {
             document.getElementById('winGlob').innerHTML = JSON.stringify(navigator.globalization);
+            document.getElementById('winGlob').style.backgroundColor = "#00aa00";
+        } else {
+            document.getElementById('winGlob').style.backgroundColor = "#aa0000";
         }
         // Add 2018-10-08T17:22:25 per documentation for 'Globalization' plugin
         if (window.Intl && typeof window.Intl === 'object') {
             document.getElementById('winInternational').innerHTML = 'ECMA Intl API available';
+            document.getElementById('winInternational').style.backgroundColor = "#00aa00";
+        } else {
+            document.getElementById('winInternational').style.backgroundColor = "#aa0000";
         }
         
     },

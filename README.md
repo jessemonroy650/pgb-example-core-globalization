@@ -8,7 +8,7 @@ This app uses the Cordova 'Device' & 'Globalization' plugin.
 * https://www.npmjs.com/package/cordova-plugin-device
 * https://www.npmjs.com/package/cordova-plugin-globalization
 
-[ECMAScript Internationalization API Specification](https://www.ecma-international.org/ecma-402/1.0/)
+[ECMAScript Internationalization API Specification](https://www.ecma-international.org/ecma-402/1.0/) will replace this plugin.
 
 ## Objects
 
