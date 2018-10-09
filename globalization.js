@@ -14,7 +14,7 @@ var globalizationPlugin = {
 
         // You can listen to 'click', but 'touchend' by passes the inherent delay.
         // See: https://www.w3schools.com/jsref/dom_obj_event.asp
-        document.getElementById('getGlobalizationStuff').addEventListener("touchend", globalizationPlugin.getGlobalizationStuff, false);
+        document.getElementById('getGlobalizationStuff').addEventListener("click", globalizationPlugin.getGlobalizationStuff, false);
     },
     //
     getGlobalizationStuff : function () {
