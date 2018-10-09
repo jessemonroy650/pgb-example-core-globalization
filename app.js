@@ -71,5 +71,6 @@ function onDeviceReady() {
         deviceStuff();
         globalizationPlugin.init();
         globalizationPlugin.hook('globalizationStuff'); // pass in the <div> block id
+        document.getElementById('status0').innerHTML = "end onDeviceReady()";
     }
 }
