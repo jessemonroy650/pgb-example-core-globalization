@@ -1,6 +1,6 @@
 var globalizationPlugin = {
     version : '1.0.0',
-    displayBlockId = '',
+    displayBlockId : '',
 
     init : function () {
         return JSON.stringify(navigator.globalization);
@@ -53,7 +53,7 @@ var globalizationPlugin = {
             "<p class=b /><b>isDayLightSavingsTime: </b>" + isDLST +
             "<p class=a /><b>First Day Of Week: </b>" + FDoW;
     },
-
+    //
     onError : function (errObject) {
         document.getElementById('errorCallback').innerHTML = 
             "Error: " + JSON.stringify(errObject);
