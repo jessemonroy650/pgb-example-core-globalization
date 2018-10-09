@@ -5,16 +5,18 @@ var globalizationPlugin = {
     init : function () {
         if (window.globalization && typeof window.globalization === 'object') {
             document.getElementById('winGlob').innerHTML = JSON.stringify(navigator.globalization);
-            document.getElementById('winGlob').style.backgroundColor = "#00aa00";
+            document.getElementById('winGlob').style.backgroundColor = "#22ff44;";
         } else {
-            document.getElementById('winGlob').style.backgroundColor = "#aa0000";
+            document.getElementById('winGlob').style.color = "#fffff";
+            document.getElementById('winGlob').style.backgroundColor = "#ff0022";
         }
         // Add 2018-10-08T17:22:25 per documentation for 'Globalization' plugin
         if (window.Intl && typeof window.Intl === 'object') {
             document.getElementById('winInternational').innerHTML = 'ECMA Intl API available';
-            document.getElementById('winInternational').style.backgroundColor = "#00aa00";
+            document.getElementById('winInternational').style.backgroundColor = "#22ff44;";
         } else {
-            document.getElementById('winInternational').style.backgroundColor = "#aa0000";
+            document.getElementById('winInternational').style.color = "#fffff";
+            document.getElementById('winInternational').style.backgroundColor = "#ff0022";
         }
         
     },

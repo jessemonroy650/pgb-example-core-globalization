@@ -10,6 +10,15 @@ This app uses the Cordova 'Device' & 'Globalization' plugin.
 
 [ECMAScript Internationalization API Specification](https://www.ecma-international.org/ecma-402/1.0/) will replace this plugin.
 
+## globalizationPlugin.init()
+
+The following labels which are next to the **App Version** at the top of the screen are debugging aids. The values for these lables are written with black text on a white background. If the background color changes, the `init()` method has run.
+
+* window.globalization:
+* window.Intl:
+
+**NOTE:** My test platform no longer activates the plugin, so I cannot test this app in full.
+
 ## Objects
 
 * GlobalizationError 
