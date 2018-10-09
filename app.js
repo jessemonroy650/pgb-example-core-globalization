@@ -66,7 +66,7 @@ function onDeviceReady() {
     //alert("device ready.");
     document.getElementById('isCordovaApp').innerHTML  = isCordovaApp();
     document.getElementById('isKnownDevice').innerHTML = isKnownDevice(navigator.platform);
-    document.getElementById('appVersion').innerHTML    = '1.0.0'; //app.version;
+    //document.getElementById('appVersion').innerHTML    = '1.0.0'; //app.version;
     if (isCordovaApp()) {
         deviceStuff();
         globalizationPlugin.init();
