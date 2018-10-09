@@ -14,7 +14,7 @@ var globalizationPlugin = {
         //document.getElementById('clearWatch').addEventListener("click", geolocationPlugin.clearWatch, false);
     },
     //
-    getGlobalizationStuff (divBlockId) {
+    getGlobalizationStuff : function (divBlockId) {
         var language = '', locale = '', isDLST = '', FDoW = '';
 
         navigator.globalization.getPreferredLanguage(
