@@ -20,27 +20,23 @@ var globalizationPlugin = {
     getGlobalizationStuff : function () {
         var language = '', locale = '', isDLST = '', FDoW = '';
 
-        document.getElementById('status0').innerHTML = "getGlobalizationStuff Called: " + globalizationPlugin.displayBlockId ;
-
-        document.getElementById(globalizationPlugin.displayBlockId).innerHTML = "junk";
-
-        return;
+        document.getElementById('status0').innerHTML = "getGlobalizationStuff Called";
 
         navigator.globalization.getPreferredLanguage(
-            function (lang) { language = lang.value; },
+            function (lang) { document.getElementById('language').innerHTML = lang.value; },
             onError
             );
         navigator.globalization.getLocaleName(
-            function (loc) { locale = loc.value; },
+            function (loc) { document.getElementById('locale').innerHTML = loc.value; },
             onError
             );
         navigator.globalization.isDayLightSavingsTime(
             new Date(),
-            function (dlst) { isDLST = dlst.value; },
+            function (dlst) { document.getElementById('daylight').innerHTML =  dlst.value; },
             onError
             );
         navigator.globalization.getFirstDayOfWeek(
-            function (dow) { FDoW = dow.value; },
+            function (dow) { document.getElementById('fdow').innerHTML =  dow.value; },
             onError
             );
 
@@ -52,12 +48,6 @@ var globalizationPlugin = {
         //navigator.globalization.stringToNumber
         //navigator.globalization.getNumberPattern
         //navigator.globalization.getCurrencyPattern
-
-        document.getElementById(globalizationPlugin.displayBlockId).innerHTML = 
-            "<p class=r /><b>language: </b>" + language +
-            "<p class=g /><b>locale: </b>" + locale +
-            "<p class=b /><b>isDayLightSavingsTime: </b>" + isDLST +
-            "<p class=a /><b>First Day Of Week: </b>" + FDoW;
     },
     //
     onError : function (errObject) {
