@@ -69,7 +69,7 @@ function onDeviceReady() {
     document.getElementById('appVersion').innerHTML    = app.version;
     if (isCordovaApp()) {
         deviceStuff();
-        globalizationPlugin.init();
+        //globalizationPlugin.init();
         globalizationPlugin.hook('globalizationStuff'); // pass in the <div> block id
         document.getElementById('status0').innerHTML = "end onDeviceReady()";
     }
