@@ -11,11 +11,6 @@ function onDOMContentLoaded() {
     document.getElementById('navName').innerHTML     = navigator.appName;
     document.getElementById('navVersion').innerHTML  = navigator.appVersion;
     document.getElementById('navPlatform').innerHTML = navigator.platform;
-
-    // Add 2018-10-08T17:22:25 per documentation for 'Globalization' plugin
-    if (window.Intl && typeof window.Intl === 'object') {
-        document.getElementById('winInternational').innerHTML = 'ECMA Intl API available';
-    }
 }
 //
 // - https://videlais.com/2014/08/21/lessons-learned-from-detecting-apache-cordova/

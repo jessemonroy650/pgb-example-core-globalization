@@ -3,18 +3,23 @@ var globalizationPlugin = {
     displayBlockId : '',
 
     init : function () {
-        return JSON.stringify(navigator.globalization);
+        if (window.globalization && typeof window.globalization === 'object') {
+            document.getElementById('winGlob').innerHTML = JSON.stringify(navigator.globalization);
+        }
+        // Add 2018-10-08T17:22:25 per documentation for 'Globalization' plugin
+        if (window.Intl && typeof window.Intl === 'object') {
+            document.getElementById('winInternational').innerHTML = 'ECMA Intl API available';
+        }
+        
     },
     // Register your function that will call the dialogs
     hook : function (divBlockId) {
         document.getElementById('status0').innerHTML = "hook() called";
-
         //
         globalizationPlugin.displayBlockId = divBlockId;
-
-        // You can listen to 'click', but 'touchend' by passes the inherent delay.
+        // You can listen to 'click', but 'touchend' bypasses the inherent delay.
         // See: https://www.w3schools.com/jsref/dom_obj_event.asp
-        document.getElementById('getGlobalizationStuff').addEventListener("click", globalizationPlugin.getGlobalizationStuff, false);
+        document.getElementById('getGlobalizationStuff').addEventListener("touchend", globalizationPlugin.getGlobalizationStuff, false);
     },
     //
     getGlobalizationStuff : function () {
