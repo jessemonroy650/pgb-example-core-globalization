@@ -20,7 +20,7 @@ var globalizationPlugin = {
     getGlobalizationStuff : function () {
         var language = '', locale = '', isDLST = '', FDoW = '';
 
-        document.getElementById('status0').innerHTML = "getGlobalizationStuff Called";
+        document.getElementById('status0').innerHTML = "getGlobalizationStuff Called: " + globalizationPlugin.displayBlockId ;
 
         navigator.globalization.getPreferredLanguage(
             function (lang) { language = lang.value; },
