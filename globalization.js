@@ -22,6 +22,10 @@ var globalizationPlugin = {
 
         document.getElementById('status0').innerHTML = "getGlobalizationStuff Called: " + globalizationPlugin.displayBlockId ;
 
+        document.getElementById(globalizationPlugin.displayBlockId).innerHTML = "junk";
+
+        return;
+
         navigator.globalization.getPreferredLanguage(
             function (lang) { language = lang.value; },
             onError
@@ -30,10 +34,6 @@ var globalizationPlugin = {
             function (loc) { locale = loc.value; },
             onError
             );
-        //navigator.globalization.dateToString
-        //navigator.globalization.stringToDate
-        //navigator.globalization.getDatePattern
-        //navigator.globalization.getDateNames
         navigator.globalization.isDayLightSavingsTime(
             new Date(),
             function (dlst) { isDLST = dlst.value; },
@@ -43,10 +43,16 @@ var globalizationPlugin = {
             function (dow) { FDoW = dow.value; },
             onError
             );
+
+        //navigator.globalization.dateToString
+        //navigator.globalization.stringToDate
+        //navigator.globalization.getDatePattern
+        //navigator.globalization.getDateNames
         //navigator.globalization.numberToString
         //navigator.globalization.stringToNumber
         //navigator.globalization.getNumberPattern
         //navigator.globalization.getCurrencyPattern
+
         document.getElementById(globalizationPlugin.displayBlockId).innerHTML = 
             "<p class=r /><b>language: </b>" + language +
             "<p class=g /><b>locale: </b>" + locale +
