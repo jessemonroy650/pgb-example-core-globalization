@@ -2,23 +2,15 @@ var globalizationPlugin = {
     version : '1.0.0',
     displayBlockId : '',
 
+    // inplace of 'innerHTML' you can use 'innerText' & 'textContent'
     init : function () {
         if (window.globalization && typeof window.globalization === 'object') {
-            document.getElementById('winGlob').innerHTML = JSON.stringify(navigator.globalization);
-            document.getElementById('winGlob').style.backgroundColor = "#22ff44;";
+            document.getElementById('winGlob').innerText = JSON.stringify(navigator.globalization);
+            document.getElementById('winGlob').setAttribute("color:#fffff;backgroundColor:#22ff44;");
         } else {
-            document.getElementById('winGlob').style.color = "#fffff";
+            document.getElementById('winGlob').innerText = 'false';
             document.getElementById('winGlob').style.backgroundColor = "#ff0022";
-        }
-        // Add 2018-10-08T17:22:25 per documentation for 'Globalization' plugin
-        if (window.Intl && typeof window.Intl === 'object') {
-            document.getElementById('winInternational').innerHTML = 'ECMA Intl API available';
-            document.getElementById('winInternational').style.backgroundColor = "#22ff44;";
-        } else {
-            document.getElementById('winInternational').style.color = "#fffff";
-            document.getElementById('winInternational').style.backgroundColor = "#ff0022";
-        }
-        
+        }        
     },
     // Register your function that will call the dialogs
     hook : function (divBlockId) {

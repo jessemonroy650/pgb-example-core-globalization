@@ -11,7 +11,12 @@ function onDOMContentLoaded() {
     document.getElementById('navName').innerHTML     = navigator.appName;
     document.getElementById('navVersion').innerHTML  = navigator.appVersion;
     document.getElementById('navPlatform').innerHTML = navigator.platform;
+    // Test if the browser/device is ECMA International API is available.
+    ECMAIntlTest('winInternational');
 }
+/* =========================================================================
+ *    Stuff below here is mostly for the 'Device' plugin
+ =========================================================================== */
 //
 // - https://videlais.com/2014/08/21/lessons-learned-from-detecting-apache-cordova/
 //
