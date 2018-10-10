@@ -12,7 +12,7 @@ This app uses the Cordova 'Device' & 'Globalization' plugin.
 
 ## globalizationPlugin.init()
 
-The following labels which are next to the **App Version** at the top of the screen are debugging aids. The values for these lables are written with black text on a white background. If the background color changes, the `init()` method has run.
+The following labels which are next to the **App Version** at the top of the screen are debugging aids. The values for these labels are written with black text on a white background. If the background color changes, the function `ECMAIntlTest()` and the method `globalizationPlugin.init()` method have run.
 
 * window.globalization:
 * window.Intl:
@@ -24,15 +24,16 @@ The following labels which are next to the **App Version** at the top of the scr
 * GlobalizationError 
 
 ## Methods
-
+### Called
 * navigator.globalization.getPreferredLanguage
 * navigator.globalization.getLocaleName
+* navigator.globalization.isDayLightSavingsTime
+* navigator.globalization.getFirstDayOfWeek
+### Not Called
 * navigator.globalization.dateToString
 * navigator.globalization.stringToDate
 * navigator.globalization.getDatePattern
 * navigator.globalization.getDateNames
-* navigator.globalization.isDayLightSavingsTime
-* navigator.globalization.getFirstDayOfWeek
 * navigator.globalization.numberToString
 * navigator.globalization.stringToNumber
 * navigator.globalization.getNumberPattern
