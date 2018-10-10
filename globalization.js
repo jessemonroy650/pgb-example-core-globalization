@@ -9,7 +9,7 @@ var globalizationPlugin = {
             document.getElementById('winGlob').setAttribute("style", "backgroundColor:#22ff44;");
         } else {
             document.getElementById('winGlob').innerText = 'false';
-            document.getElementById('winGlob').setAttribute("style", "color:#fffff;backgroundColor:#ff0022;");
+            document.getElementById('winGlob').setAttribute("style", "color:#ffffff;backgroundColor:#ff0022;");
         }        
     },
     // Register your function that will call the dialogs
